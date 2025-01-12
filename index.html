@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏盒子</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>
+            <div class="logo">
+                <img src="sounds/logo.jpg" alt="游戏盒子">
+            </div>
+            游戏盒子
+            <a href="https://space.bilibili.com/" class="bilibili-tag" target="_blank">
+                <i class="fab fa-bilibili"></i>
+                b站：满级迷你
+            </a>
+        </h1>
+        <nav>
+            <a href="#" class="active">全部游戏</a>
+            <a href="#">动作游戏</a>
+            <a href="#">益智游戏</a>
+            <a href="#">策略游戏</a>
+        </nav>
+    </header>
+
+    <main class="game-container">
+        <div class="game-card">
+            <img src="https://via.placeholder.com/300x200" alt="俄罗斯方块">
+            <h3>俄罗斯方块</h3>
+            <p>经典的俄罗斯方块游戏，考验你的反应能力！</p>
+            <button onclick="openGame('tetris')">开始游戏</button>
+        </div>
+
+        <div class="game-card">
+            <img src="https://via.placeholder.com/300x200" alt="贪吃蛇">
+            <h3>贪吃蛇</h3>
+            <p>控制蛇吃食物成长，不要撞到墙壁或自己！</p>
+            <button onclick="openGame('snake')">开始游戏</button>
+        </div>
+
+        <div class="game-card">
+            <img src="https://via.placeholder.com/300x200" alt="2048">
+            <h3>2048</h3>
+            <p>合并数字块，看看你能否达到2048！</p>
+            <button onclick="openGame('2048')">开始游戏</button>
+        </div>
+
+        <div class="game-card">
+            <img src="https://via.placeholder.com/300x200" alt="记忆翻牌">
+            <h3>记忆翻牌</h3>
+            <p>考验记忆力的翻牌游戏，找出所有配对！</p>
+            <button onclick="openGame('memory')">开始游戏</button>
+        </div>
+    </main>
+
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <div class="close"></div>
+            <div id="gameContainer"></div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/tetris.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/2048.js"></script>
+    <script src="js/memory.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+    <script>
+        // 初始化认证系统
+        initAuth();
+    </script>
+</body>
+</html> 
